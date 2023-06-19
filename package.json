@@ -29,6 +29,7 @@
     "@fullcalendar/list": "^6.1.7",
     "@fullcalendar/timegrid": "^6.1.7",
     "accessibility": "^4.5.7",
+    "angular-cli-ghpages": "^1.0.6",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.5",
     "fullcalendar": "^6.1.7",
