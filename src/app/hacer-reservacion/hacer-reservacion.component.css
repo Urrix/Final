@@ -1,0 +1,24 @@
+.contenedor{
+    width: 64%;
+    padding: 3%;
+    align-items: center;
+    margin: 5% 15% 5% 15%;
+    border: 1px black solid;
+    border-radius: 1vw;
+}
+h1,h2,h3,h5{
+    width: 100%;
+    text-align: center;
+}
+label, input,select,button{
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+}
+#error{
+    color: rgb(159, 0, 0);
+}
+#feli{
+    color: rgb(0, 90, 0);
+}

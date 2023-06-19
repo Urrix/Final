@@ -1,0 +1,58 @@
+<div class="contenedor">
+    <h1>Hacer reservacion.</h1>
+    <br>
+    <div *ngIf="!mostrarFechas">
+        <h2>Lugar: {{casaNombre}}</h2>
+        <h2>Usuario: {{usuario.nombre}} {{usuario.apellido}}</h2>
+        <br>
+        <h5>Ingresa los datos para hacer tu reservacion</h5>
+        <br>
+        <label>Ano de la reservacion: </label>
+        <input type="number" [(ngModel)]="ano">
+        <br><br>
+        <label>Mes de la reservacion:</label>
+        <select [(ngModel)]="mesSeleccionado">
+            <option *ngFor="let i of meses">{{i}}</option>
+        </select>
+        <br><br>
+        <button (click)="continuar()">Continuar</button>
+        <br><br>
+    </div>
+
+    <div *ngIf="seleccionarDia  && !mostrarFechas">
+        <label>Selecciona uno de los dias disponibles</label>
+        <br>
+        <select [(ngModel)]="dia">
+            <option *ngFor="let i of dias">{{i}}</option>
+        </select>
+        <br><br>
+        <button (click)="continuar2()">Seleccionar fecha</button>
+        <br><br>
+    </div>
+    <h5 [innerHTML]="msj" *ngIf="error" id="error"></h5>
+
+    <div *ngIf="seleccionarFechaCheckOut && !mostrarFechas">
+        <label *ngIf="seleccionarFechaCheckOut">Seleccione la fecha del checkout:</label>
+        <input type="date" max="{{limiteCheckOut}}" [(ngModel)]="fechaCheckOut" min="{{fechaMinCheckOut}}">
+        <br><br>
+        <button (click)="continuar3()" *ngIf="seleccionarFechaCheckOut">Continuar</button>
+        <br><br>
+    </div>
+
+    <div *ngIf="mostrarFechas">
+        <br><br>
+        <h1 id="feli">Felicidades {{usuario.nombre}}!</h1>
+        <br>
+        <h3 id="feli">Has hecho reservacion en {{casaNombre}}.</h3>
+        <br>
+        <h5>Fecha de CheckIn: </h5>
+        <br>
+        <h5 [innerHTML]="fechaCheckIn.toLocaleDateString()"></h5>
+        <br><br>
+        <h5>Fecha de CheckOut: </h5>
+        <br>
+        <h5 [innerHTML]="fechaCheckOut.toLocaleDateString()"></h5>
+        <button (click)="terminar()">Volver al menu.</button>
+    </div>
+
+</div>
